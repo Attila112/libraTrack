@@ -18,7 +18,7 @@ class BorrowingController extends Controller
             'user_id' => auth()->id(),
             'book_id' => $book->id,
             'borrowed_at' => now(),
-            'due_date' => now()->addDays(14), // 2 hét határidő
+            'due_date' => now()->addDays(14),
         ]);
 
         $book->update(['is_borrowed' => true]);
@@ -27,17 +27,13 @@ class BorrowingController extends Controller
     }
     public function return(Book $book)
     {
+        $book->update(['is_borrowed' => false]);
         $borrowing = Borrowing::where('book_id', $book->id)
             ->whereNull('returned_at')
             ->first();
 
-        if (!$borrowing) {
-            return back()->with('error', 'Ez a könyv nincs kikölcsönözve.');
-        }
-
         $borrowing->update(['returned_at' => now()]);
-        $book->update(['is_borrowed' => false]);
 
-        return back()->with('success', 'Sikeresen visszahoztad a könyvet!');
+        return back()->with('success', 'The book is returned.');
     }
 }

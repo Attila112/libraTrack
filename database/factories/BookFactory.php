@@ -24,6 +24,7 @@ class BookFactory extends Factory
             'year' => $this->faker->year(),
             'pages' => $this->faker->randomDigit(),
             'available_copies' => $this->faker->randomDigit(),
+            'is_borrowed' => false,
         ];
     }
 }

@@ -15,18 +15,14 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+{{--                    @if (auth()->check() && auth()->user()->role === 'admin')
                     <x-nav-link :href="route('books.create')" :active="request()->routeIs('books.create')">
                         {{ __('Add New Book') }}
                     </x-nav-link>
+                    @endif--}}
                     <x-nav-link :href="route('books.index')" :active="request()->routeIs('books.index')">
                         {{ __('Books') }}
                     </x-nav-link>
-         {{--           @if(auth()->check() && auth()->user()->role === 'admin')
-                        <x-nav-link :href="route('books.index')" :active="request()->routeIs('books.index')">
-                            {{ __('Books') }}
-                        </x-nav-link>
-                    @endif--}}
-
                 </div>
             </div>
 

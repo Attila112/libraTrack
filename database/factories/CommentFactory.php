@@ -21,8 +21,8 @@ class CommentFactory extends Factory
     public function definition(): array
     {
         return [
-            'book_id' => Book::factory(),
-            'user_id' => User::factory(),
+            'book_id' => Book::all()->random()->id,
+            'user_id' => User::all()->random()->id,
             'comment' => $this->faker->paragraph(),
         ];
     }

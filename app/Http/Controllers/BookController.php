@@ -19,10 +19,11 @@ class BookController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory
+    public function create()
     {
         return view('books.create');
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -98,7 +99,8 @@ class BookController extends Controller
             'pages' => 'required|integer',
             'available_copies' => 'required|integer|min:0',
         ]));
-        return redirect()->route('books.index');
+        return view('books.edit', compact('book'));
+        //return redirect()->route('books.index');
     }
 
     /**

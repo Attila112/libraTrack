@@ -11,7 +11,7 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <h1>This is your Dashboard!</h1>
                     <p>Welcome back, {{ Auth::user()->name }}!</p>
-                    <h1> Just look the Books!</h1>
+                    <h1> This is a very starter project. It is waiting to development!</h1>
                     {{ __("You're logged in!") }}
                 </div>
             </div>

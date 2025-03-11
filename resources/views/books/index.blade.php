@@ -61,7 +61,7 @@
                         @if (auth()->check() && auth()->user()->role === 'admin') <!-- Csak adminok láthatják -->
                         <form action="{{ route('books.return', $book) }}" method="POST">
                             @csrf
-                            <button type="submit">Visszahozás</button>
+                            <button type="submit">Return</button>
                         </form>
                         @endif
                     @endif</td>

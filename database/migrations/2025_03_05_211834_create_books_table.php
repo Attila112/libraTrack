@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('year');
             $table->integer('pages');
             $table->integer('available_copies');
+            $table->boolean('is_borrowed')->default(false);
             $table->timestamps();
         });
     }
